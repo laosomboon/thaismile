@@ -50,7 +50,7 @@ const dbRefObject = firebase.database().ref().child('allmenus');
 
 
 dbRefObject.on('value', function(snap) {
-    allmenus = _.filter(snap.val(),function (o) { return o.thaismile > 0;};
+    allmenus = _.filter(snap.val(),function (o) { return o.thaismile > 0;});
     allmenus.forEach(function(c) {
 
         // var a = document.createElement('a');
