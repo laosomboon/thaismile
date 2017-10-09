@@ -47,14 +47,17 @@ function initMap() {
 
 
     $("#contact-form").submit(function(e) {
-        console.log('form submitted');
+
         var name = document.getElementById('name');
         var email = document.getElementById('email');
         var phone = document.getElementById('phone');
         var message = document.getElementById('message');
 
         if (!name.value || !email.value || !phone.value || !message.value) {
+
             alertify.error('Please check your entries');
+            e.preventDefault();
+            $(this).reset();
         } else {
             $.ajax({
                 url: "https://formspree.io/saranat2515@gmail.com",
@@ -62,9 +65,9 @@ function initMap() {
                 data: $(this).serialize(),
                 dataType: "json"
             });
-            e.preventDefault();
-            $(this).get(0).reset();
             alertify.success('Message sent');
+            e.preventDefault();
+            $(this).reset();
         }
     });
 
