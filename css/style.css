@@ -385,6 +385,7 @@ table {
 
 .menu-restaurant .menu-title {
     float: left;
+    max-width: width 85%;
     font-family: Montserrat, arial;
     text-transform: uppercase;
     letter-spacing: 1px;
